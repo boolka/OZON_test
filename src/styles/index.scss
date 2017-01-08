@@ -1,0 +1,14 @@
+@import "./consts";
+@import "./mixins";
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'proxima-nova','Helvetica Neue', Arial, Helvetica, sans-serif;
+}

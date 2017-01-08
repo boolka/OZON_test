@@ -1,0 +1,159 @@
+@import "../../styles/mixins";
+@import "../../styles/consts";
+
+$post-ns: post;
+
+.#{$post-ns}s-container {
+
+	@include full-width {
+		@include prefix(column-count, 3, $std-prefixes);
+		padding: 39px;
+	};
+
+	@include collapse-width {
+		padding: 24px 58px;
+	};
+}
+
+.#{$post-ns} {
+	display: inline-block;
+	vertical-align: middle;
+	background-color: #fff;
+	margin: 4px 4px 24px 4px;
+    @include prefix(box-sizing, border-box, $std-prefixes);
+    @include prefix(border-radius, 4px, $std-prefixes);
+    @include prefix(box-shadow, 0 0 6px #777, $std-prefixes);
+
+    @include collapse-width {
+    	width: 100%;
+    }
+
+	.#{$post-ns}-meta {
+		display: table;
+		width: 100%;
+		height: 64px;
+		@include prefix(box-sizing, border-box, $std-prefixes);
+
+		@include full-width {
+			padding: 11px;
+		}
+
+		@include collapse-width {
+			float: right;
+			margin-bottom: -88px;
+			width: 50%;
+			padding: 24px;
+		};
+
+		.#{$post-ns}-meta-logo,
+		.#{$post-ns}-meta-content,
+		.#{$post-ns}-meta-time {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.#{$post-ns}-meta-logo {
+			width: 10%;
+
+			.#{$post-ns}-meta-logo-image {
+				width: 40px;
+				height: 40px;
+				@include prefix(border-radius, 50%, $std-prefixes);
+				@include prefix(box-sizing, border-box, $std-prefixes);
+			    display: block;
+			    overflow: hidden;
+			}
+		}
+
+		.#{$post-ns}-meta-content {
+			color: #262626;
+			padding: 0 11px;
+
+			.#{$post-ns}-meta-content-wrap {
+				width: 100%;
+
+				.#{$post-ns}-meta-content-wrap-cell {
+					vertical-align: middle;
+				}
+			}
+
+			.#{$post-ns}-meta-content-username {
+				font-size: 16px;
+				font-weight: bold;
+			}
+			.#{$post-ns}-meta-content-location {
+				font-size: 15px;
+			}
+		}
+
+		.#{$post-ns}-meta-time {
+			width: 10%;
+			color: #999;
+			font-size: 15px;
+		}
+	}
+
+	.#{$post-ns}-content {
+
+		@include full-width {
+			padding: 0 11px 11px 11px;
+		};
+
+		@include collapse-width {
+			padding: 0 24px 24px 24px;
+			margin-left: 50%;
+			margin-top: 88px;
+
+			.#{$post-ns}-content-wrap {
+				border-top: 1px solid #efefef;
+			}
+		};
+
+		.#{$post-ns}-content-likes {
+			padding-top: 14px;
+
+			.#{$post-ns}-content-likes-heart {
+				cursor: pointer;
+			}
+
+			.#{$post-ns}-content-likes-count {
+				padding-left: 10px;
+			}
+		}
+		.#{$post-ns}-content-desc {
+			
+			@include full-width {
+				padding: 10px 0;
+			};
+
+			@include collapse-width {
+				padding: 15px 0;
+			};
+
+			font-size: 14px;
+		}
+	}
+
+	.#{$post-ns}-facade {
+		background-color: #edeeee;
+		@include prefix(box-shadow, inset 0 0 20px 0 #efefef, $std-prefixes);
+
+		@include full-width {
+			width: 100%;
+		};
+
+		@include collapse-width {
+			width: 50%;
+			float: left;
+			.#{$post-ns}-facade-image {
+				@include prefix(border-radius, 4px 0 0 4px, $std-prefixes);
+			}
+		};
+
+		.#{$post-ns}-facade-image {
+			display: block;
+			width: 100%;
+			@include prefix(user-select, none, $std-prefixes);
+		}
+	}
+}

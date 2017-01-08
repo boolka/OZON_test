@@ -1,0 +1,26 @@
+/// https://www.sitepoint.com/sass-mixins-kickstart-project/#vendor-prefixes
+/// Mixin to prefix a property
+/// @author Hugo Giraudel
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+/// @param {List} $prefixes (()) - List of prefixes to print
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+ 
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+@mixin full-width {
+	@media (min-width: #{$collapse-width + 1}px) {
+		@content;
+	}
+}
+
+@mixin collapse-width {
+	@media (max-width: #{$collapse-width}px) {
+		@content;
+	}
+}
