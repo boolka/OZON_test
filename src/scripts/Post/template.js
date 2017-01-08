@@ -20,7 +20,11 @@ module.exports = function() {
 		<div class=\"post-meta-time\">${this.timeLeft}</div>
 	</div>
 	<div class=\"post-facade\">
-		<img class=\"post-facade-image\" src=\"${decodeURIComponent(this.data.images.standard_resolution.url)}\" />
+		<a href=\"${decodeURIComponent(this.data.link)}\">
+			<figure>
+				<img class=\"post-facade-image\" src=\"${decodeURIComponent(this.data.images.standard_resolution.url)}\" />
+			</figure>
+		</a>
 	</div>
 	<div class=\"post-content\">
 		<div class=\"post-content-wrap\">

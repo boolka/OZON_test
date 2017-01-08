@@ -27,6 +27,12 @@ export default class Post {
 		containerEl.insertAdjacentHTML('beforeEnd', this.template());
 		this.el = containerEl.children[containerEl.children.length - 1];
 
+		let filterName = 'filter' in this.data && this.data.filter.toLowerCase();
+
+		if (filterName && filterName != 'normal') {
+			this.el.getElementsByTagName('figure')[0].classList.add(filterName);
+		}
+
 		this.el.addEventListener('click', event => {
 			if ( event.target.classList.contains('post-content-likes-heart') ) {
 				alert(this.data.id);
